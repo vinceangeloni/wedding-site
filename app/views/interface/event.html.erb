@@ -1,28 +1,33 @@
-<% content_for :page_hero do %>
-<div class="page_wrapper mt40 mb60">
-	<div class="page_hero events parallax-window" data-parallax="scroll" data-image-src="<%= image_path("events_hero.png") %>">
-		<div class="content border">
-			<div class="align-vertical">
-				<h2 class="text-white text-center heavy">Geraldo's at La Salle Park</h2>
-				<p class="sub-heading">
-					Set in picturesque La Salle Park, Geraldo’s offers stunning views of Lake Ontario  from the shores of Burlington. Enjoy outdoor cocktails while mingling with fellow guests or something something something.
+<% content_for :header do -%>
+  <%= stylesheet_link_tag 'event' %>
+<% end -%>
+<div class="page_wrapper mt20 mb60">
+	<div class="page_hero events parallax-window">
+		<div class="row middle-xs border max-height">
+			<div class="col-sm-12">
+				<h1 class="text-white text-center heavy">Geraldo's at La Salle Park</h1>
+				<p class="sub-heading text-white text-center">
+					Set in picturesque La Salle Park, Geraldo’s offers stunning views of Lake Ontario from the shores of Burlington. Enjoy outdoor cocktails while mingling with fellow guests or something something something.
 				</p>
 			</div>
 		</div>
 	</div>
 </div>
-<% end %>
 <div class="page_wrapper mt40 mb60">
 	<div class="page_inner">
 		<div class="row">
-		    
+		    <div class="col-sm-12">
+				<div class="page_section">
+					<h3 class="leadline"><span>Schedule of Events</span></h3>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="container-fluid grey">
-	<div class="container">
+<div class="page_wrapper grey">
+	<div class="page_inner">
 		<div class="row">
-		    <div class="col-lg-12">
+		    <div class="col-sm-12">
 				<div class="page_section">
 					<h3 class="leadline"><span>Accomodations</span></h3>
 					<p>
@@ -33,25 +38,3 @@
 		</div>
 	</div>
 </div>
-<script>
-    function initMap() {
-    var myLatLng = {lat: 43.302182, lng: -79.845835};
-      var mapDiv = document.getElementById('map');
-      var map = new google.maps.Map(mapDiv, {
-          center: myLatLng,
-          zoom: 16,
-          scrollwheel: false,
-          streetViewControl: false,
-          mapTypeControl: false,
-          zoomControl: false,
-          styles: [{"featureType":"poi.park","elementType":"all","stylers":[{"color":"#F2F0E0"},{"lightness":13}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"color":"#FBFAF2"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"color":"#FBFAF2"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#E2E0C6"}]},{"featureType":"road","elementType":"all","stylers":[{"color":"#E3E0C4"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":-61}]},{"featureType":"road.local","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.attraction","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"off"}]}]
-      });
-      var marker = new google.maps.Marker({
-	    position: myLatLng,
-	    map: map
-	  });
-    }
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzUK7s-7I6pRmDTZwflIcLOSH2GZjZBYk&callback=initMap">
-</script>

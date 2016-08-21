@@ -36,6 +36,37 @@ html, body {
   @include flexbox();
   width: 100%;
   padding: 0;
+
+  &.grey {
+    background-color: #F9F9F9;
+
+    h3 > span {
+      background-color: #F9F9F9;
+    }
+  }
+
+  .page_hero {
+    width: 100%;
+    background-size: cover;
+    min-height: 500px;
+    padding: 40px;
+
+    .sub-heading {
+      font-size: 18px;
+      text-align: center;
+      color: #fff;
+      width: 70%;
+      margin: 0 auto;
+      font-weight: 100;
+      line-height: 1.6em;
+    }
+    .row {
+
+      &.border {
+        border: 1px solid rgba(255,255,255,0.6);
+      }
+    }
+  }
   
   .page_inner {
     width: 960px;
@@ -44,43 +75,12 @@ html, body {
     padding-right: 2rem;
     padding-left: 2rem;
 
-    &.grey {
-      background-color: #F9F9F9;
-
-      h3 > span {
-        background-color: #F9F9F9;
-      }
-    }
     .page_section {
       position: relative;
       padding: 80px 0;
 
       h3 {
         text-align: center;
-      }
-    }
-    .page_hero {
-      width: 100%;
-      background-size: cover;
-      background: transparent;
-      min-height: 500px;
-      padding: 40px;
-
-      .sub-heading {
-        font-size: 18px;
-        text-align: center;
-        color: #fff;
-        width: 70%;
-        margin: 0 auto;
-        font-weight: 100;
-        line-height: 1.6em;
-      }
-      .content {
-        height: 480px;
-
-        &.border {
-          border: 1px solid rgba(255,255,255,0.6);
-        }
       }
     }
   }
@@ -459,6 +459,9 @@ blockquote {
 .text-white {
   color : #fff;
 }
+.text-center {
+  text-align: center !Important;
+}
 .text-light {
   color: $text-light;
 }
@@ -467,4 +470,7 @@ blockquote {
 }
 .center {
   margin: 0 auto;
+}
+.max-height {
+  height: 100% !important;
 }

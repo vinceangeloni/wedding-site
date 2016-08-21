@@ -12,5 +12,6 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( our_story.css )
 Rails.application.config.assets.precompile += %w( registry.css )
+Rails.application.config.assets.precompile += %w( event.css )
 Rails.application.config.assets.precompile += %w( rsvp.css )
 Rails.application.config.assets.precompile += %w( _index.css )
