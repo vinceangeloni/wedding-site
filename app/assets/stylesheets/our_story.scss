@@ -1,0 +1,71 @@
+
+
+.storyline {
+	margin-top: 40px;
+
+	.date-line {
+		position: relative;
+		text-align: center;
+		width: 76px;
+		z-index: 1;
+
+		&.left {
+			left: 95px;
+		}
+		&.right {
+			margin-left: auto;
+			margin-right: 95px;
+		}
+		.date {
+			border: #ececec 2px solid;
+			padding: 4px 14px;
+			border-radius: 40px;
+			font-size: 16px;
+			color: #8E8E90;
+			background: #fff;
+			position: absolute;
+			top: 51px;
+		}
+		.line {
+			height: 136px;
+			width: 2px;
+			background-color: #ececec;
+			margin: 0 auto;
+		}
+		&.start > .line {
+			height: 50px;
+		}
+		&.start > .date {
+			position: relative;
+			top: initial;
+		}
+	}
+	.story-event {
+		position: relative;
+		z-index: 2;
+		box-shadow: 0 4px 12px rgba(0,0,0,.18);
+
+		.photo {
+			img {
+				display: block;
+			}
+		}
+		&.left {
+			.photo {
+				padding-left: 0;
+			}
+		}
+		&.right {
+			.details {
+				padding-left: 50px;
+			}
+			.photo {
+				padding-right: 0;
+
+				img {
+					float: right;
+				}
+			}
+		}
+	}
+}

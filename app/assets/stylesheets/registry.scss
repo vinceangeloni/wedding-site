@@ -1,0 +1,23 @@
+
+.logo-box {
+	display: block;
+	width: 341px;
+	height: 341px;
+	content: ' ';
+	box-shadow: 0 4px 12px rgba(0,0,0,.28);
+	transition: all .2s;
+
+	&:hover {
+		transition: all .2s;
+		box-shadow: 0 8px 18px rgba(0,0,0,.24);
+	}
+
+	&.bbb {
+		background: #384A9B url(logo-bbb.png) no-repeat center center;
+		background-size: 255px;
+	}
+	&.rc {
+		background: #384A9B url(logo-rc.png) no-repeat 0 0;
+		background-size: cover;
+	}
+}

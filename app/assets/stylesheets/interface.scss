@@ -1,0 +1,470 @@
+
+@import url(https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,300,700,400italic);
+@import url(https://www.google.com/fonts#ChoosePlace:select/Collection:Roboto+Slab:200,400,300,700);
+@import '_flex';
+@import 'mixins';
+
+//----------------------------------------------------------------------
+// Palette
+//----------------------------------------------------------------------
+$bg-primary: #003864;
+$text-primary: #434343;
+$text-light: #5d5d5d;
+
+//----------------------------------------------------------------------
+// Fonts
+//----------------------------------------------------------------------
+$font-roboto: 'Roboto', serif;
+$font-roboto-slab: 'Roboto Slab', serif;
+
+//----------------------------------------------------------------------
+// Reset
+//----------------------------------------------------------------------
+html, body {
+  border-top: $bg-primary 3px solid;
+  font-family: $font-roboto;
+  color: $text-primary;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+//----------------------------------------------------------------------
+// Structure
+//----------------------------------------------------------------------
+.page_wrapper {
+  @include flexbox();
+  width: 100%;
+  padding: 0;
+  
+  .page_inner {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    &.grey {
+      background-color: #F9F9F9;
+
+      h3 > span {
+        background-color: #F9F9F9;
+      }
+    }
+    .page_section {
+      position: relative;
+      padding: 80px 0;
+
+      h3 {
+        text-align: center;
+      }
+    }
+    .page_hero {
+      width: 100%;
+      background-size: cover;
+      background: transparent;
+      min-height: 500px;
+      padding: 40px;
+
+      .sub-heading {
+        font-size: 18px;
+        text-align: center;
+        color: #fff;
+        width: 70%;
+        margin: 0 auto;
+        font-weight: 100;
+        line-height: 1.6em;
+      }
+      .content {
+        height: 480px;
+
+        &.border {
+          border: 1px solid rgba(255,255,255,0.6);
+        }
+      }
+    }
+  }
+  .row {
+    &.padding {
+      padding: 40px 0;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .row {
+    margin: 0 !Important;
+    text-align: center;
+  }
+}
+//----------------------------------------------------------------------
+// Navigation
+//----------------------------------------------------------------------
+.navbar {
+  width: 100%;
+  padding: 15px 0;
+  .brand {
+    float: left;
+  }
+  ul {
+    margin: 12px 0;
+    padding: 0;
+    float: right;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 20px;
+
+      a {
+        color: $text-primary;
+        font-family: $font-roboto-slab;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: $text-primary 2px solid;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------
+// Typography
+//----------------------------------------------------------------------
+h1,h2,h3,h4,h5 {
+  color: $text-primary;
+  font-family: $font-roboto-slab;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  &.heavy, strong {
+    font-weight: 600;
+  }
+}
+h3 { 
+  &.leadline {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: #dbdbdb 1px solid;
+    line-height: 0;
+
+    span {
+      background-color: #fff;
+      padding: 0 20px;
+    }
+  }
+}
+label, input, .form-control, .panel-default>.panel-heading {
+	color: #3D3D3E;
+}
+p {
+  &.large {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  &.light {
+    color: $text-light;
+  }
+}
+blockquote {
+  font-size: 26px;
+  font-family: $font-roboto-slab;
+  font-weight: 200;
+  border-left: $bg-primary 2px solid;
+  padding: 0 0 0 20px;
+  margin: 0 0 40px 0;
+}
+
+//----------------------------------------------------------------------
+// Buttons
+//----------------------------------------------------------------------
+.button {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: $font-roboto-slab;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  background-color: $bg-primary;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border: none;
+  text-align: center;
+
+  &.large {
+    font-size: 21px;
+    padding: 12px 28px;
+    letter-spacing: 2px;
+  }
+
+  &.clear {
+    background: none;
+    border: #fff 1px solid;
+    color: #fff;
+    opacity: 0.85;
+
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+  &.pill {
+    border-radius: 60px;
+  }
+}
+
+//----------------------------------------------------------------------
+// Helper classes
+//----------------------------------------------------------------------
+
+.ml5 {
+  margin-left: 5px !important;
+}
+.ml10 {
+  margin-left: 10px !important;
+}
+.ml20 {
+  margin-left: 20px !important;
+}
+.ml25 {
+  margin-left: 25px !important;
+}
+.ml30 {
+  margin-left: 30px !important;
+}
+.ml40 {
+  margin-left: 40px !important;
+}
+.ml50 {
+  margin-left: 50px !important;
+}
+.ml60 {
+  margin-left: 60px !important;
+}
+.mr5 {
+  margin-right: 5px !important;
+}
+.mr10 {
+  margin-right: 10px !important;
+}
+.mr20 {
+  margin-right: 20px !important;
+}
+.mr30 {
+  margin-right: 30px !important;
+}
+.mr40 {
+  margin-right: 40px !important;
+}
+.mr50 {
+  margin-right: 50px !important;
+}
+.mr60 {
+  margin-right: 60px !important;
+}
+.mt5 {
+  margin-top: 5px !important;
+}
+.mt10 {
+  margin-top: 10px !important;
+}
+.mt15 {
+  margin-top: 15px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mt30 {
+  margin-top: 40px !important;
+}
+.mt40 {
+  margin-top: 40px !important;
+}
+.mt50 {
+  margin-top: 50px !important;
+}
+.mt60 {
+  margin-top: 60px !important;
+}
+.mb5 {
+  margin-bottom: 5px !important;
+}
+.mb10 {
+  margin-bottom: 10px !important;
+}
+.mb15 {
+  margin-bottom: 15px !important;
+}
+.mb20 {
+  margin-bottom: 20px !important;
+}
+.mb30 {
+  margin-bottom: 30px !important;
+}
+.mb40 {
+  margin-bottom: 40px !important;
+}
+.mb50 {
+  margin-bottom: 40px !important;
+}
+.mb60 {
+  margin-bottom: 60px !important;
+}
+.mb80 {
+  margin-bottom: 80px !important;
+}
+.pt10 {
+  padding-top: 10px !important;
+}
+.pt15 {
+  padding-top: 15px !important;
+}
+.pt20 {
+  padding-top: 20px !important;
+}
+.pt25 {
+  padding-top: 25px !important;
+}
+.pt30 {
+  padding-top: 30px !important;
+}
+.pt40 {
+  padding-top: 40px !important;
+}
+.pt50 {
+  padding-top: 50px !important;
+}
+.pt60 {
+  padding-top: 60px !important;
+}
+.pb10 {
+  padding-bottom: 10px !important;
+}
+.pb15 {
+  padding-bottom: 15px !important;
+}
+.pb20 {
+  padding-bottom: 20px !important;
+}
+.pb25 {
+  padding-bottom: 25px !important;
+}
+.pb30 {
+  padding-bottom: 30px !important;
+}
+.pb40 {
+  padding-bottom: 40px !important;
+}
+.pb50 {
+  padding-bottom: 50px !important;
+}
+.pb60 {
+  padding-bottom: 60px !important;
+}
+.pl10 {
+  padding-left: 10px !important;
+}
+.pl15 {
+  padding-left: 15px !important;
+}
+.pl20 {
+  padding-left: 20px !important;
+}
+.pl25 {
+  padding-left: 25px !important;
+}
+.pl30 {
+  padding-left: 30px !important;
+}
+.pl40 {
+  padding-left: 40px !important;
+}
+.pl50 {
+  padding-left: 50px !important;
+}
+.pl60 {
+  padding-left: 60px !important;
+}
+.pr10 {
+  padding-right: 10px !important;
+}
+.pr15 {
+  padding-right: 15px !important;
+}
+.pr20 {
+  padding-right: 20px !important;
+}
+.pr30 {
+  padding-right: 30px !important;
+}
+.pr40 {
+  padding-right: 40px !important;
+}
+.pr50 {
+  padding-right: 50px !important;
+}
+.pr60 {
+  padding-right: 60px !important;
+}
+.nomargin {
+  margin: 0 !important;
+}
+.notmargin {
+  margin-top: 0 !important;
+}
+.nobmargin {
+  margin-bottom: 0 !important;
+}
+.nolmargin {
+  margin-left: 0 !important;
+}
+.normargin {
+  margin-right: 0 !important;
+}
+.nopadding {
+  padding: 0 !important;
+}
+.nolpadding {
+  padding-left: 0 !important;
+}
+.norpadding {
+  padding-right: 0 !important;
+}
+.nobpadding {
+  padding-bottom: 0 !important;
+}
+.notpadding {
+  padding-top: 0 !important;
+}
+.noborder {
+  border: none !important;
+}
+.align-vertical {
+  @include vertical-align(relative);
+}
+.separator {
+	border-top: #E0E0E1 1px solid;
+	padding-top: 10px;
+	margin-top: 10px;
+}
+.pos-relative {
+  position: relative;
+}
+.text-white {
+  color : #fff;
+}
+.text-light {
+  color: $text-light;
+}
+.display-block {
+  display: block;
+}
+.center {
+  margin: 0 auto;
+}
