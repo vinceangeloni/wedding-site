@@ -9,7 +9,7 @@
 //----------------------------------------------------------------------
 $bg-primary: #003864;
 $text-primary: #434343;
-$text-light: #5d5d5d;
+$text-light: #808080;
 
 //----------------------------------------------------------------------
 // Fonts
@@ -48,7 +48,7 @@ html, body {
   .page_hero {
     width: 100%;
     background-size: cover;
-    min-height: 500px;
+    min-height: 400px;
     padding: 40px;
 
     .sub-heading {

@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *= require_self
-  *= require flexboxgrid
+ *= require flexboxgrid
  *= require interface
+ *= require event
+ *= require registry
+ *= require our_story
  */

@@ -1,4 +1,17 @@
 
+//----------------------------------------------------------------------
+// Schedule Structure
+//----------------------------------------------------------------------
+
+.schedule {
+
+	&.line {
+		width: 100%;
+		height: 2px;
+		background: #DBDBDB;
+	}
+}
+
 .page_hero {
 	background: transparent url(events_hero.png) no-repeat center center;
 }
