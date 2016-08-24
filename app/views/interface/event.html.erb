@@ -75,9 +75,36 @@
 		</div>
 	</div>
 </div>
-<div class="page_wrapper grey">
+<div class="page_wrapper">
 	<div id="map">
 
+	</div>
+</div>
+<div class="page_wrapper mt20 mb60">
+	<div class="page_inner">
+		<div class="row">
+		    <div class="col-sm-12">
+				<div class="page_section">
+					<h3 class="leadline"><span>Location Info</span></h3>
+					<div class="text-center mb60">
+						<h3>Ceremony</h3>
+						<p class="medium weight-light">
+							Streetsville United Church<br>
+							274 Queen St S<br>
+							Mississauga, Ontario L5M 1L8
+						</p>
+					</div>
+					<div class="text-center">
+						<h3>Reception</h3>
+						<p class="medium weight-light">
+							Geraldo’s at LaSalle Park<br>
+							50 Northshore Boulevard E<br>
+							Burlington, Ontario L7T 4J8
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="page_wrapper grey">
@@ -97,10 +124,14 @@
 
 <script>
     function initMap() {
-    var myLatLng = {lat: 43.302182, lng: -79.845835};
+      var directionsService = new google.maps.DirectionsService;
+      var directionsDisplay = new google.maps.DirectionsRenderer;
+      var event_loc1 = "274 Queen St S, Mississauga, ON L5M 1L8";
+      var event_loc2 = "50 North Shore Boulevard East, Burlington, ON L7T 4J8";
+      var map_center = {lat: 43.440955, lng: -79.788208};
       var mapDiv = document.getElementById('map');
       var map = new google.maps.Map(mapDiv, {
-          center: myLatLng,
+          center: map_center,
           zoom: 13,
           scrollwheel: false,
           streetViewControl: false,
@@ -108,10 +139,23 @@
           zoomControl: false,
           styles: [{"featureType":"poi.attraction","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"off"}]}]
       });
-      var marker = new google.maps.Marker({
-	    position: myLatLng,
-	    map: map
-	  });
+	  calculateAndDisplayRoute(directionsService, directionsDisplay);
+	  directionsDisplay.setMap(map);
+
+	  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: event_loc1,
+          destination: event_loc2,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+        	console.log(response);
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
     }
 </script>
 <script async defer
