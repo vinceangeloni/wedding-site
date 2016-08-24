@@ -16,7 +16,7 @@ $font-roboto-slab: 'Roboto Slab', serif;
 //----------------------------------------------------------------------
 // Reset
 //----------------------------------------------------------------------
-html, body#index {
+html#index, body#index {
 	height: 100%;
 	border: none !important;
 	background: #003864 url(home_hero.png) no-repeat 0 0;
@@ -46,7 +46,7 @@ html, body#index {
 //----------------------------------------------------------------------
 // Inner content
 //----------------------------------------------------------------------
-.page_wrapper {
+body#index .page_wrapper {
 	padding: 45px !important;
 	@include flexbox();
 	height: 100%;
@@ -69,23 +69,23 @@ html, body#index {
 // Responsive
 //----------------------------------------------------------------------
 @media only screen and (max-width: 1200px) {
-	html, body#index {
+	body#index {
 		background-position: 20% 0;
 	}
 }
 @media only screen and (max-width: 800px) {
-	html, body#index {
+	body#index {
 		background-position: 60% 0;
-	}
-	.page_wrapper {
-		padding: 25px !important;
+		.page_wrapper {
+			padding: 25px !important;
 
-		.page_inner {
-			.home_middle {
-				width: 255px;
-				padding: 20px;
-				img {
-					width: 100%;
+			.page_inner {
+				.home_middle {
+					width: 255px;
+					padding: 20px;
+					img {
+						width: 100%;
+					}
 				}
 			}
 		}

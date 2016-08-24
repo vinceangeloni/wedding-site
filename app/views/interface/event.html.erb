@@ -76,6 +76,11 @@
 	</div>
 </div>
 <div class="page_wrapper grey">
+	<div id="map">
+
+	</div>
+</div>
+<div class="page_wrapper grey">
 	<div class="page_inner">
 		<div class="row">
 		    <div class="col-sm-12">
@@ -89,3 +94,26 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    function initMap() {
+    var myLatLng = {lat: 43.302182, lng: -79.845835};
+      var mapDiv = document.getElementById('map');
+      var map = new google.maps.Map(mapDiv, {
+          center: myLatLng,
+          zoom: 13,
+          scrollwheel: false,
+          streetViewControl: false,
+          mapTypeControl: false,
+          zoomControl: false,
+          styles: [{"featureType":"poi.attraction","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"off"}]}]
+      });
+      var marker = new google.maps.Marker({
+	    position: myLatLng,
+	    map: map
+	  });
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzUK7s-7I6pRmDTZwflIcLOSH2GZjZBYk&callback=initMap">
+</script>

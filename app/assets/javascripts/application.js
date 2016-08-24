@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require rsvp
 //= require parallax.min
-//= require turbolinks
 //= require_tree .
