@@ -4,11 +4,50 @@
 //----------------------------------------------------------------------
 
 .schedule {
+	position: relative;
+	margin-bottom: 120px; 
 
-	&.line {
-		width: 100%;
-		height: 2px;
+	.time-block {
+		position: relative;
+		padding: 2em 0;
+
+		.time-content {
+			position: relative;
+			width: 39%;
+			text-align: center;
+
+			&:after {
+				position: absolute;
+				content: " ";
+				right: -70px;
+				top: 50%;
+				width: 60px;
+				height: 2px;
+				background: #DBDBDB;
+			}
+
+			&.right {
+				float: right;
+
+				&:after {
+					right: initial;
+					left: -70px;
+				}
+			}
+		}
+
+		&.first {
+			padding-top: 0;
+		}
+	}
+	&:before {
+		content: " ";
+		left: 50%;
+		width: 2px;
+		height: 87.6%;
 		background: #DBDBDB;
+		position: absolute;
+		top: 82px;
 	}
 }
 

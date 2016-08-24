@@ -172,6 +172,12 @@ p {
   &.light {
     color: $text-light;
   }
+  &.weight-light {
+    font-weight: 300;
+  }
+  &.weight-heavy {
+    font-weight: 400;
+  }
 }
 blockquote {
   font-size: 26px;
@@ -181,6 +187,7 @@ blockquote {
   padding: 0 0 0 20px;
   margin: 0 0 40px 0;
 }
+
 
 //----------------------------------------------------------------------
 // Buttons
@@ -473,4 +480,14 @@ blockquote {
 }
 .max-height {
   height: 100% !important;
+}
+.cf:before, .cf:after {
+  content: " ";
+  display: table; /* 2 */
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
 }
