@@ -13,11 +13,11 @@
 	}
 
 	&.bbb {
-		background: #384A9B image-url(logo-bbb.png) no-repeat center center;
+		background: #384A9B url(logo-bbb.png) no-repeat center center;
 		background-size: 255px;
 	}
 	&.rc {
-		background: #384A9B image-url(logo-rc.png) no-repeat 0 0;
+		background: #384A9B url(logo-rc.png) no-repeat 0 0;
 		background-size: cover;
 	}
 }
