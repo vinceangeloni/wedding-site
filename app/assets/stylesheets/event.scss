@@ -60,3 +60,37 @@
 	min-height: 600px;
 }
 
+//----------------------------------------------------------------------
+// Responsive
+//----------------------------------------------------------------------
+@media only screen and (max-width: 1200px) {
+  
+}
+@media only screen and (max-width: 800px) {
+  
+}
+@media only screen and (max-width: 640px) {
+	.schedule {
+		margin-bottom: 20px;
+		
+		.time-block {
+			.time-content {
+				width: 100%;
+				padding:10px 20px;
+				float: none !important;
+				box-sizing: border-box;
+				background: #fff;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+}
+@media only screen and (max-width: 380px) {
+  
+
+}
+
