@@ -102,8 +102,19 @@ html, body {
 .navbar {
   width: 100%;
   padding: 15px 0;
+  position: relative;
+
   .brand {
     float: left;
+  }
+  .hamburger {
+    display: none;
+    right: -10px;
+    background: url(hamburger.png) no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-size: 30px;
   }
   ul {
     margin: 16px 0;
@@ -129,6 +140,59 @@ html, body {
         }
       }
     }
+  }
+}
+
+/* Mobile menu */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -290px;
+  width: 250px;
+  height: 100%;
+  background: $bg-primary;
+  padding: 20px;
+  z-index: 3;
+  transition: all 0.3s;
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: url(close.png) no-repeat 0 0;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .nav {
+    margin-top: 40px;
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+        text-align: center;
+
+        a {
+          color: #fff;
+          font-family: $font-roboto-slab;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          text-decoration: none;
+          border: rgba(255,255,255,0.4) 1px solid;
+          padding: 12px 10px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.open {
+    right: 0;
   }
 }
 
@@ -495,4 +559,24 @@ blockquote {
 }
 .cf {
   *zoom: 1;
+}
+
+//----------------------------------------------------------------------
+// Responsive
+//----------------------------------------------------------------------
+@media only screen and (max-width: 1200px) {
+  
+}
+@media only screen and (max-width: 800px) {
+  .navbar {
+    .hamburger {
+      display: block !important;
+    }
+    .nav {
+      display: none !important;
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  
 }

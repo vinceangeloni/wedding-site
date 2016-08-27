@@ -15,3 +15,22 @@
 //= require rsvp
 //= require parallax.min
 //= require_tree .
+
+
+$(document).ready(function() {
+	$('.hamburger').click(function() {
+		toggleNav();
+	});	
+	$('.close').click(function() {
+		toggleNav();
+	});	
+
+});
+
+function toggleNav() {
+	if ($('.mobile-nav').hasClass('open')) {
+		$('.mobile-nav').removeClass('open');
+	} else {
+		$('.mobile-nav').addClass('open');
+	}
+}
