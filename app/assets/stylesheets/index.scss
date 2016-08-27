@@ -95,6 +95,10 @@ body#index .page_wrapper {
 @media only screen and (max-width: 640px) {
 	body#index {
 		background-position: 80% 0;
+
+		.page_wrapper {
+			padding: 10px !important;
+		}
 	}
 }
 
