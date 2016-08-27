@@ -34,6 +34,11 @@
 @media only screen and (max-width: 640px) {
 	.logo-box {
 		width: 100%;
+
+		&.rc {
+			background: #384A9B url(logo-rc.png) no-repeat center center;
+			background-size: cover;
+		}
 	}  
 
 }
