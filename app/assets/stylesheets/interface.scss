@@ -14,7 +14,7 @@ $text-light: #808080;
 //----------------------------------------------------------------------
 // Fonts
 //----------------------------------------------------------------------
-$font-roboto: 'Roboto', serif;
+$font-roboto: 'Roboto', sans-serif;
 $font-roboto-slab: 'Roboto Slab', serif;
 
 //----------------------------------------------------------------------
@@ -110,11 +110,11 @@ html, body {
   .hamburger {
     display: none;
     right: -15px;
-    background: url(hamburger.png) no-repeat 0 0;
-    width: 25px;
-    height: 25px;
+    background: url(hamburger_black.svg) no-repeat 0 0;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    background-size: 25px;
+    background-size: 30px;
   }
   ul {
     margin: 16px 0;
@@ -159,10 +159,10 @@ html, body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: url(close.png) no-repeat 0 0;
-    background-size: 20px;
-    width: 20px;
-    height: 20px;
+    background: url(close.svg) no-repeat 0 0;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
   }
   .nav {
     margin-top: 40px;
@@ -572,11 +572,45 @@ blockquote {
     .hamburger {
       display: block !important;
     }
-    .nav {
+    .nav, ul {
       display: none !important;
     }
   }
 }
 @media only screen and (max-width: 640px) {
+  p {
+    &.large {
+      font-size: 15px;
+    }
+  }
+  blockquote {
+    font-size: 22px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  .page_wrapper {
+
+    &:nth-of-type(2) {
+      margin-top: 0 !important;
+    }
+    .navbar {
+      .brand {
+        img {
+          width: 180px;
+        }
+      }
+    }
+    .page_inner {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      .row {
+        &.padding {
+          padding: 20px 0;
+        }
+      }
+    }
+
+  }
   
 }

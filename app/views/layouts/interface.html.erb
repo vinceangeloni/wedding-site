@@ -37,9 +37,21 @@
     <![endif]-->
   </head>
   <body>
+    <div class="mobile-nav">
+      <div class="close"></div>
+      <div class="nav">
+          <ul>
+            <li><%= link_to "Our Story", "/our_story"  %></li>
+            <li><%= link_to "Event Info", "/event"  %></li>
+            <li><%= link_to "Registry", "/registry"  %></li>
+            <!--<li><%= link_to "RSVP", "/rsvp"  %></li>-->
+          </ul>
+      </div>
+    </div>
     <div class="page_wrapper">
       <div class="page_inner">
-        <div class="navbar">
+        <div class="navbar cf">
+            <div class="hamburger"></div>
             <a class="brand" href="/"><%= image_tag("header.svg", width: "210") %></a>
             <ul>
               <li><%= link_to "Our Story", "/our_story"  %></li>

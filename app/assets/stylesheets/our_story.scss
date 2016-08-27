@@ -69,3 +69,38 @@
 		}
 	}
 }
+
+//----------------------------------------------------------------------
+// Responsive
+//----------------------------------------------------------------------
+@media only screen and (max-width: 1200px) {
+  
+}
+@media only screen and (max-width: 800px) {
+  
+}
+
+@media only screen and (max-width: 640px) {
+  .storyline {
+  	.date-line {
+		&.left, &.right {
+			left: 50%;
+			right: initial;
+			margin: 0;
+			position: relative;
+			transform: translateX(-50%);
+		}
+  	}
+  	.story-event {
+  		.photo, .photo img {
+  			width: 100%;
+  		}
+  		.details {
+  			padding: 10px !important;
+  		}
+  	}
+  }
+}
+@media only screen and (max-width: 380px) {
+  
+}
