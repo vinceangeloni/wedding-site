@@ -34,3 +34,10 @@ function toggleNav() {
 		$('.mobile-nav').addClass('open');
 	}
 }
+function loadImage(element, target) {
+	console.log('loading image...');
+    $(element).load(function() {
+   	  console.log('image loaded.');
+      $(target).css('background-image', 'url(' + $(this).attr('src') + ')');
+    });
+}

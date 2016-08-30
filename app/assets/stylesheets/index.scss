@@ -19,8 +19,9 @@ $font-roboto-slab: 'Roboto Slab', serif;
 html#index, body#index {
 	height: 100%;
 	border: none !important;
-	background: #003864 url(home_hero.png) no-repeat 0 0;
-	background-size: cover; 
+	background-image: url(home_hero-s.png);
+	background-size: cover;
+	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 
