@@ -112,7 +112,7 @@
 		<div class="row">
 		    <div class="col-sm-12">
 				<div class="page_section">
-					<h3 class="leadline"><span>Accomodations</span></h3>
+					<h3 class="leadline"><span>Accommodations</span></h3>
 					<p>
 						<a href="http://www.thewaterfrontdowntown.com/" target="_blank"><%= image_tag("acc-waterfront.png", size: "278x150", class: "display-block center") %></a>
 					</p>
@@ -147,7 +147,8 @@
         directionsService.route({
           origin: event_loc1,
           destination: event_loc2,
-          travelMode: 'DRIVING'
+          travelMode: 'DRIVING',
+          avoidTolls: true,
         }, function(response, status) {
         	console.log(response);
           if (status === 'OK') {
