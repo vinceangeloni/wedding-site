@@ -68,6 +68,14 @@ body#index .page_wrapper {
 			text-align: center;
 			@include align-middle();
 		}
+		.button {
+			box-shadow: none;
+			color: #fff !important;
+
+			&:hover {
+				box-shadow: none;
+			}
+		}
 	}
 }
 
