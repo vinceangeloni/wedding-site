@@ -10,6 +10,8 @@
 $bg-primary: #003864;
 $text-primary: #434343;
 $text-light: #808080;
+$border: #dbdbdb;
+$border-dark: #cccccc;
 
 //----------------------------------------------------------------------
 // Fonts
@@ -65,6 +67,9 @@ html, body {
       &.border {
         border: 1px solid rgba(255,255,255,0.6);
       }
+    }
+    &.blue {
+      background: $bg-primary;
     }
   }
   
@@ -230,6 +235,10 @@ label, input, .form-control, .panel-default>.panel-heading {
 	color: #3D3D3E;
 }
 p {
+  &.sub-heading {
+    margin-top: -10px;
+    font-size: 18px;
+  }
   &.large {
     font-size: 18px;
     line-height: 27px;
@@ -260,12 +269,75 @@ blockquote {
   padding: 0 0 0 20px;
   margin: 0 0 40px 0;
 }
+.help-text {
+  font-size: 14px;
+  color: $text-light;
+  margin-top: 8px;
+  display: block;
+  text-align: right;
+}
 
 /* Colors */
 .red {
   color: #FE4365;
 }
 
+/* Basic Links */
+a:link, a:visited {
+  color: $bg-primary;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+//----------------------------------------------------------------------
+// Form
+//----------------------------------------------------------------------
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+
+//----------------------------------------------------------------------
+// Inputs
+//----------------------------------------------------------------------
+input[type="text"] {
+  display: block;
+  background: #fff;
+  padding: 6px;
+  border-radius: 4px;
+  border: $border 1px solid;
+  -webkit-display: none;
+  font-size: 14px;
+  width: 100%;
+  @include border-box;
+
+  &:focus {
+    border: rgba(0, 0, 0, 0.3) 1px solid;
+    outline: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    transition: all 0.3s;
+  }
+
+  &.large {
+    font-size: 16px;
+    padding: 12px;
+  }
+  &.xlarge {
+    font-size: 17px;
+    padding: 14px;
+  }
+}
 
 //----------------------------------------------------------------------
 // Buttons
@@ -275,16 +347,51 @@ blockquote {
   text-transform: uppercase;
   font-family: $font-roboto-slab;
   letter-spacing: 1px;
-  border-radius: 4px;
-  background-color: $bg-primary;
-  color: #fff;
+  background-color: $border;
+  color: $text-primary !important;
+  text-decoration: none;
   text-decoration: none;
   padding: 12px 18px;
-  border: none;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.15) 100%);
+  border: 1px solid rgba(0,0,0,0.3);
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,0.16);
+  border-radius: 6px;
 
+  &:hover {
+    background-color: #d6d6d6;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.16);
+    text-decoration: none;
+  }
+  &:active {
+    background-color: #cccccc;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  /* Colors */
+  &.primary {
+    background-color: $bg-primary;
+    color: #fff !important;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.3) 100%);
+
+    &:hover {
+      background-color: #002e52;
+      border: #002e52 1px solid
+    }
+    &:active {
+      background-color: #00233d;
+      border: #00233d 1px solid;
+    }
+  }
+  /* Sizes */
   &.large {
-    font-size: 21px;
+    font-size: 15px;
     padding: 12px 28px;
     letter-spacing: 2px;
   }
@@ -302,6 +409,77 @@ blockquote {
   &.pill {
     border-radius: 60px;
   }
+  &.full {
+    width: 100%;
+  }
+  &.stateful.active {
+    background-color: #457CA7;
+    border: $bg-primary 1px solid;
+    color: #fff;
+  }
+}
+
+.button-group {
+  display: inline-block;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+
+  .button { 
+    float: left;
+    border-radius: 0 6px 6px 0;
+    box-shadow: none;
+
+    &:first-of-type {
+      border-radius: 6px 0 0 6px;
+    }
+    &.active {
+      background-color: $bg-primary;
+      color: #fff !important;
+      background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.3) 100%);
+      border: 1px solid rgba(0,0,0,0.3);
+    }
+    &:nth-of-type(2) {
+      border-left: none;
+    }
+  }
+}
+
+//----------------------------------------------------------------------
+// Wells
+//----------------------------------------------------------------------
+
+.well {
+  padding: 20px;
+  border: #dbdbdb 1px solid;
+  border-radius: 8px; 
+  background: #f5f5f5;
+
+  &.no-background {
+    background: none;
+  }
+  &.shadow {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+  &.blue {
+    background-color: $bg-primary;
+    color: #fff !important;
+    border: none;
+  }
+
+}
+
+//----------------------------------------------------------------------
+// Alerts
+//----------------------------------------------------------------------
+.alert {
+  text-align: left;
+  display: block;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  color: #901713;
+  background: #f6b9b7;
+  font-size: 14px;
 }
 
 //----------------------------------------------------------------------
@@ -559,6 +737,9 @@ footer {
 .text-center {
   text-align: center !Important;
 }
+.text-left {
+  text-align: left !Important;
+}
 .text-light {
   color: $text-light;
 }
@@ -582,6 +763,9 @@ footer {
   *zoom: 1;
 }
 .image-preload {
+  display: none;
+}
+.hidden {
   display: none;
 }
 

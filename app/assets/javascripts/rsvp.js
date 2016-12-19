@@ -1,13 +1,25 @@
 var attending = false;
 var guest_num = 0;
+var rsvp_code = "";
 
 
 $(document).ready(function() {
+
+	// RSVP code
+	$('.rsvp_char').keyup(function(e) {		
+		if (e.which != 8){
+			$(this).nextAll('.rsvp_char:first').focus();
+		}
+		rsvp_code = $('#rsvp_char1').val() + $('#rsvp_char2').val() + $('#rsvp_char3').val() + $('#rsvp_char4').val();
+		$('#rsvp_code').val(rsvp_code);
+		console.log(rsvp_code);
+	});
 	
 	$('.btn-attending').click(function() {
 		var attending = $(this).val();
 		$('.btn-attending').removeClass('active');
 		$(this).addClass('active');
+		$('#attending').val(attending);
 		showForm(attending);
 	});
 
@@ -40,11 +52,12 @@ $(document).ready(function() {
 })
 
 showForm = function(is_attending) {
-	attending = is_attending;
 
-	if (is_attending == true) {
+	if (is_attending === 'true') {
 		$("#attend_form").removeClass('hidden');
+		$("#not_attend_form").addClass('hidden');
 	} else {
-		$("#attend_form").toggleClass('hidden');
+		$("#attend_form").addClass('hidden');
+		$("#not_attend_form").removeClass('hidden');
 	}
 }
