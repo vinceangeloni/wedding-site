@@ -22,8 +22,10 @@ $(document).ready(function() {
 		$(this).addClass('selected');
 		$('#attending').val(attending);
 		if (attending == "true") {
+			$('#step2-submit').val('Next');
 			$('#guest-select').removeClass('hidden');
 		} else {
+			$('#step2-submit').val('Send RSVP');
 			$('#guest-select').addClass('hidden');
 		}
 		$('#step2-submit').removeClass('disabled');

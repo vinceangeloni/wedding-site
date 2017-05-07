@@ -18,14 +18,16 @@ class RsvpController < ApplicationController
       @guestCount = params['guest_count'].to_i
       @rsvp_code = params['rsvp_code'].downcase
       @invitee = Invite.find_by(rsvp_code: params['rsvp_code'].downcase)
-      if (!@invitee)
-        @not_found = true
-      end 
+
       if @step == "2"
         @actionName = "respond"
       elsif @step == "3"
         @actionName = "send_rsvp"
       end
+
+      if (!@invitee)
+        redirect_to action: 'index', not_found: true, rsvp_code: @rsvp_code
+      end 
     else
       redirect_to action: 'index'
     end
