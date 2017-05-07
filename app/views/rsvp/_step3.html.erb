@@ -1,0 +1,48 @@
+<h3 class="leadline"><span>RSVP Step 3: Guest Information</span></h3>
+<div class="row">
+	<div class="guests mt20">
+		<% @guestCount.times do |i| %>
+		<div class="guest" id="<%= i %>">
+			<div class="well nomargin no-background">
+				<div class="form-group">
+					<label>First name*</label>
+					<input type="text" name="guest[<%= i %>]first_name" class="form-control" minlength="2" required>
+				</div>
+				<div class="form-group">
+					<label>Last name*</label>
+					<input type="text" name="guest[<%= i %>]last_name" class="form-control" minlength="2" required>
+				</div>
+				<div class="form-group">
+					<label>Entree Preference*</label>
+					<% @meals.each_with_index do |meal,index| %>
+					<div class="form-group--field">
+						<label class="radio" for="guest-meal">
+							<input type="radio" name="guest[<%= i %>]meal" value="<%= meal.id %>" required> <%= meal.item %>
+							<div class="form-group--field-hint ml20">
+								<%= meal.description %>
+							</div>
+						</label>
+					</div>
+					<% end %>
+				</div>
+				<div class="form-group last">
+					<label>Dietary/Allergies</label>
+					<div class="checkbox nomargin">
+						<label class="check"><input type="checkbox" name="guest[<%= i %>]dietary" class="guest-dietary" data-guest="1"> This guest has a dietary restriction and/or allergies</label>
+					</div>
+				</div>
+				<div class="mt10 dietary_text hidden">
+					<textarea class="form-control" rows="3" name="guest[<%= i %>]dietary_text" placeholder="Enter any allergies or dietary preferences you may have..."></textarea>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12 text-center">
+		<div class="form-group mt40 text-center">
+			<%= submit_tag("Send RSVP",:class => "button primary xlarge") %>
+		</div>
+	</div>
+</div>

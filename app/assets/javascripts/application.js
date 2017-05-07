@@ -24,6 +24,11 @@ $(document).ready(function() {
 	$('.close').click(function() {
 		toggleNav();
 	});	
+     $('.tip').tipr({
+          'speed': 200,
+          'mode': 'above',
+          'space': 70
+     });
 
 });
 

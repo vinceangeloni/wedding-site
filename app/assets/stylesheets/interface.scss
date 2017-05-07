@@ -1,8 +1,8 @@
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,400,300,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:200,400,300,700);
-@import '_flex';
 @import 'mixins';
+@import '_flex';
 
 //----------------------------------------------------------------------
 // Palette
@@ -12,11 +12,12 @@ $text-primary: #434343;
 $text-light: #808080;
 $border: #dbdbdb;
 $border-dark: #cccccc;
+$error: #F05252;
 
 //----------------------------------------------------------------------
 // Fonts
 //----------------------------------------------------------------------
-$font-roboto: 'Roboto', sans-serif;
+$font-ss: 'Source Sans Pro', sans-serif;
 $font-roboto-slab: 'Roboto Slab', serif;
 
 //----------------------------------------------------------------------
@@ -24,7 +25,7 @@ $font-roboto-slab: 'Roboto Slab', serif;
 //----------------------------------------------------------------------
 html, body {
   border-top: $bg-primary 3px solid;
-  font-family: $font-roboto;
+  font-family: $font-ss;
   color: $text-primary;
   background: #fff;
   margin: 0;
@@ -133,7 +134,7 @@ html, body {
 
       a {
         color: $text-primary;
-        font-family: $font-roboto-slab;
+        font-family: $font-ss;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 1px;
@@ -206,10 +207,10 @@ html, body {
 //----------------------------------------------------------------------
 h1,h2,h3,h4,h5 {
   color: $text-primary;
-  font-family: $font-roboto-slab;
-  font-weight: 400;
+  font-family: $font-ss;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
   &.heavy, strong {
     font-weight: 600;
@@ -233,6 +234,12 @@ h3 {
 }
 label, input, .form-control, .panel-default>.panel-heading {
 	color: #3D3D3E;
+
+  &.error {
+    color: $error;
+    font-size: 12px;
+    font-weight: normal;
+  }
 }
 p {
   &.sub-heading {
@@ -263,7 +270,7 @@ p {
 }
 blockquote {
   font-size: 26px;
-  font-family: $font-roboto-slab;
+  font-family: $font-ss;
   font-weight: 200;
   border-left: $bg-primary 2px solid;
   padding: 0 0 0 20px;
@@ -294,8 +301,35 @@ a:hover {
 //----------------------------------------------------------------------
 // Form
 //----------------------------------------------------------------------
+.panel-heading {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: #C2CFD6 1px solid;
+}
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+
+  .form-group--field {
+    position: relative;
+    display: block;
+
+    .form-group--field-info {
+      cursor: help;
+      position: absolute;
+      right: 0;
+      top: -3px;
+    }
+    .form-group--field-hint {
+      font-size: 13px;
+      color: $text-light;
+    }
+  }
+  &.last {
+    margin-bottom: 0;
+  }
 }
 
 label {
@@ -305,13 +339,20 @@ label {
   font-size: 14px;
   letter-spacing: 0.4px;
   font-weight: 600;
+
+  &.small {
+    font-size: 13px;
+  }
+  &.radio, &.check {
+    font-weight: normal;
+  }
 }
 
 
 //----------------------------------------------------------------------
 // Inputs
 //----------------------------------------------------------------------
-input[type="text"] {
+input[type="text"], textarea {
   display: block;
   background: #fff;
   padding: 6px;
@@ -321,11 +362,11 @@ input[type="text"] {
   font-size: 14px;
   width: 100%;
   @include border-box;
+  resize:  none;
 
   &:focus {
     border: rgba(0, 0, 0, 0.3) 1px solid;
     outline: none;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
     transition: all 0.3s;
   }
 
@@ -337,6 +378,9 @@ input[type="text"] {
     font-size: 17px;
     padding: 14px;
   }
+  &.error {
+    border-color: $error;
+  }
 }
 
 //----------------------------------------------------------------------
@@ -345,33 +389,39 @@ input[type="text"] {
 .button {
   display: inline-block;
   text-transform: uppercase;
-  font-family: $font-roboto-slab;
-  letter-spacing: 1px;
-  background-color: $border;
-  color: $text-primary !important;
+  font-family: $font-ss;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  background-color: #F6F8F9;
+  color: #7896A5 !important;
   text-decoration: none;
   text-decoration: none;
-  padding: 12px 18px;
+  padding: 8px 18px;
   text-align: center;
   cursor: pointer;
+  font-size: 13px;
   transition: all 0.2s;
-  background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.15) 100%);
-  border: 1px solid rgba(0,0,0,0.3);
-  box-shadow: 0 3px 7px 0 rgba(0,0,0,0.16);
+  background-image: linear-gradient(-180deg, rgba(194,207,214,0.00) 0%, rgba(194,207,214,0.15) 100%);
+  border: 1px solid #C2CFD6;
   border-radius: 6px;
 
   &:hover {
-    background-color: #d6d6d6;
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.16);
+    background-color: rgba(218, 226, 231, 0.6);
     text-decoration: none;
   }
   &:active {
-    background-color: #cccccc;
+    background-color: rgba(218, 226, 231, 0.8);
     outline: none;
   }
   &:focus {
     outline: none;
     transition: all 0.3s;
+  }
+  &.selected {
+    background-color: $bg-primary;
+    color: #fff !important;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.3) 100%);
+    border: 1px solid rgba(0,0,0,0.3);
   }
 
   /* Colors */
@@ -379,6 +429,7 @@ input[type="text"] {
     background-color: $bg-primary;
     color: #fff !important;
     background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.3) 100%);
+    border: #00233d 1px solid;
 
     &:hover {
       background-color: #002e52;
@@ -391,9 +442,14 @@ input[type="text"] {
   }
   /* Sizes */
   &.large {
-    font-size: 15px;
+    font-size: 14px;
     padding: 12px 28px;
-    letter-spacing: 2px;
+    letter-spacing: 0.8px;
+  }
+  &.xlarge {
+    font-size: 15px;
+    padding: 14px 28px;
+    letter-spacing: 0.8px;
   }
 
   &.clear {
@@ -417,20 +473,35 @@ input[type="text"] {
     border: $bg-primary 1px solid;
     color: #fff;
   }
+  &.disabled {
+    opacity: 0.5;
+    cursor: initial;
+  }
+
+  // Icons
+  .icon {
+    float: left;
+    width: 20px;
+    height: 20px;
+
+    &.left {
+      margin-right: 8px;
+    }
+  }
 }
 
 .button-group {
   display: inline-block;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
 
   .button { 
     float: left;
-    border-radius: 0 6px 6px 0;
-    box-shadow: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: 1px solid #C2CFD6;
 
     &:first-of-type {
       border-radius: 6px 0 0 6px;
+      border: 1px solid #C2CFD6;
     }
     &.active {
       background-color: $bg-primary;
@@ -438,34 +509,75 @@ input[type="text"] {
       background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.3) 100%);
       border: 1px solid rgba(0,0,0,0.3);
     }
-    &:nth-of-type(2) {
-      border-left: none;
+    &:last-of-type {
+      border-radius: 0 6px 6px 0;
     }
   }
 }
+
+//----------------------------------------------------------------------
+// Icons
+//----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
 // Wells
 //----------------------------------------------------------------------
 
 .well {
+  display: inline-block;
   padding: 20px;
-  border: #dbdbdb 1px solid;
+  border: #C2CFD6 1px solid;
   border-radius: 8px; 
-  background: #f5f5f5;
+  background-color: #F6F8F9;
 
   &.no-background {
     background: none;
   }
   &.shadow {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
   }
   &.blue {
     background-color: $bg-primary;
     color: #fff !important;
     border: none;
   }
+  .separator {
+    border: #C2CFD6 1px solid;
+  }
 
+}
+
+//----------------------------------------------------------------------
+// Modals
+//----------------------------------------------------------------------
+.modal_canvas {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0.8);
+
+  .modal {
+    width: 400px;
+    left: 0;
+    top: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    border: #C2CFD6 1px solid;
+    background-color: #F6F8F9;
+    @include align-middle();
+
+    .modal_header {
+      padding: 20px;
+    }
+    .modal_body {
+      padding:  0 20px 20px 20px;
+    }
+    .modal_footer {
+      padding: 20px;
+    }
+  }
 }
 
 //----------------------------------------------------------------------
@@ -687,6 +799,12 @@ footer {
 .pr60 {
   padding-right: 60px !important;
 }
+.fleft {
+  float: left;
+}
+.fright {
+  float: right;
+}
 .nomargin {
   margin: 0 !important;
 }
@@ -768,6 +886,9 @@ footer {
 .hidden {
   display: none;
 }
+.full-width {
+  width: 100%;
+}
 
 //----------------------------------------------------------------------
 // Responsive
@@ -786,6 +907,16 @@ footer {
   }
 }
 @media only screen and (max-width: 640px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .button {
+    &.large {
+      padding: 10px 15px;
+    }
+  }
   p {
     &.large {
       font-size: 15px;
