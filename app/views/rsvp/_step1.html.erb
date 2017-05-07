@@ -13,11 +13,7 @@
 				<p class="text-center notmargin">Enter your RSVP code to get started</p>
 				<%= form_tag({controller: "rsvp", action: "respond"}, method: "post") do %>
 					<div class="form-group text-center">
-						<%= text_field_tag(:rsvp_char1, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true, :autofocus => true) %>
-						<%= text_field_tag(:rsvp_char2, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
-						<%= text_field_tag(:rsvp_char3, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
-						<%= text_field_tag(:rsvp_char4, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
-						<%= hidden_field_tag(:rsvp_code, nil, :required => true) %>
+						<%= text_field_tag(:rsvp_code, nil, :class => "xlarge", :size => 1, :maxlength => 4, :required => true, :autofocus => true) %>
 						<%= hidden_field_tag(:step, 2, :required => true) %>
 					</div>
 					<div class="form-group nomargin text-center">
