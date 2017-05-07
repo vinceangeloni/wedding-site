@@ -1,0 +1,52 @@
+<h3 class="leadline"><span>Step 1: RSVP Code</span></h3>
+<% if (!params['rsvp_code'] || @not_found) %>
+<div class="row">
+	<div class="col-lg-4">
+		<p class="medium"></p>
+	</div>
+	<div class="col-lg-4">
+		<% if @not_found %>
+		<div class="alert" role="alert"><strong>Sorry</strong> RSVP code '<%= params['rsvp_code'].upcase %>' wasn't found. Did you type it right?</div>
+		<% end %>
+		<h3 class="text-center">We hope you can join us!</h3>
+		<div class="well">
+				<p class="text-center notmargin">Enter your RSVP code to get started</p>
+				<%= form_tag({controller: "rsvp", action: "respond"}, method: "post") do %>
+					<div class="form-group text-center">
+						<%= text_field_tag(:rsvp_char1, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true, :autofocus => true) %>
+						<%= text_field_tag(:rsvp_char2, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
+						<%= text_field_tag(:rsvp_char3, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
+						<%= text_field_tag(:rsvp_char4, nil, :class => "rsvp_char xlarge", :size => 1, :maxlength => 1, :required => true) %>
+						<%= hidden_field_tag(:rsvp_code, nil, :required => true) %>
+						<%= hidden_field_tag(:step, 2, :required => true) %>
+					</div>
+					<div class="form-group nomargin text-center">
+						<%= submit_tag("Next",:class => "button primary large") %>
+					</div>
+				<% end %>
+			</div>
+			<p class="small text-center pt20 nomargin">
+					<a href="#" id="rsvp_show">Where's my RSVP code?</a>
+				</p>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<p class="medium"></p>
+	</div>
+</div>
+<% else %>
+<div class="well shadow mb40 blue">
+	<h2 class="text-white notmargin nobmargin">You've Already RSVP'd</h2>
+	<p class="medium nobmargin text-white">
+	Hey <%= @invitee.name %>, looks like you've already responded to our RSVP. 
+	</p>
+</div>
+<div class="row mt20">
+	<div class="col-lg-12">
+	<div class="text-center">
+		<a href="/details" class="button large mr10" role="button">Wedding Details</a>
+		<a href="/registry" class="button large" role="button">View The Registry</a>
+	</div>
+	</div>
+</div>
+<% end %>
