@@ -24,9 +24,11 @@ $(document).ready(function() {
 		if (attending == "true") {
 			$('#step2-submit').val('Next');
 			$('#guest-select').removeClass('hidden');
+			$('#respondForm').attr('action', '/rsvp/respond');
 		} else {
 			$('#step2-submit').val('Send RSVP');
 			$('#guest-select').addClass('hidden');
+			$('#respondForm').attr('action', '/rsvp/send_rsvp');
 		}
 		$('#step2-submit').removeClass('disabled');
 	});

@@ -19,6 +19,7 @@ class RsvpController < ApplicationController
       @rsvp_code = params['rsvp_code'].downcase
       @invitee = Invite.find_by(rsvp_code: params['rsvp_code'].downcase)
 
+
       if @step == "2"
         @actionName = "respond"
       elsif @step == "3"
@@ -28,6 +29,9 @@ class RsvpController < ApplicationController
       if (!@invitee)
         redirect_to action: 'index', not_found: true, rsvp_code: @rsvp_code
       end 
+      if (@invitee.response == true)
+        redirect_to action: 'index', responded: true, rsvp_code: @rsvp_code
+      end
     else
       redirect_to action: 'index'
     end

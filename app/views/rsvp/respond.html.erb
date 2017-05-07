@@ -1,6 +1,6 @@
 <div class="page_wrapper mt40 mt60 mb80">
 	<div class="page_inner">
-		<%= form_tag({controller: "rsvp", action: @actionName}, method: "post") do %>
+		<%= form_tag({controller: "rsvp", action: @actionName}, method: "post", id: "respondForm") do %>
 		<% if @step == "2" %>
 			<%= render "rsvp/step2" %>
 		<% elsif @step == "3" %>
