@@ -2,33 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import '_flex';
-
 input.rsvp_char {
 	width: auto;
 	display: inline-block;
-}
-.guest-add {
-	width: 90px;
-	box-shadow: none !important;
-	background: none;
-}
-.guests {
-	@include flexbox;
-	margin-left: -20px;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-
-	.guest {
-		@include flex(1, 1, auto);
-		margin-left: 20px;
-		min-width: 250px;
-		max-width: 450px;
-
-		.well {
-			display: block;
-		}
-	}
-
 }

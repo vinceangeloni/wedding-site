@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rsvp/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'index#index'
 
@@ -8,7 +10,6 @@ Rails.application.routes.draw do
   get 'event' => 'interface#event'
 
   get 'rsvp' => 'rsvp#index'
-  post 'rsvp/respond' => 'rsvp#respond'
   post 'rsvp/send_rsvp' => 'rsvp#send_rsvp'
 
   get 'registry' => 'interface#registry'
