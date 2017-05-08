@@ -48,9 +48,9 @@ $(document).ready(function() {
 	// Toggles the dietary textarea for this guest
 	$('.guest-dietary').change(function() {
 		if ($(this).is(':checked')) {
-			$(".dietary_text").removeClass('hidden');
+			$(this).parent().find(".dietary_text").removeClass('hidden');
 		} else {
-			$(".dietary_text").addClass('hidden');
+			$(this).parent().find(".dietary_text").addClass('hidden');
 		}
 	});
 })

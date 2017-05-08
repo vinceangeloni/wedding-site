@@ -27,9 +27,8 @@ class RsvpController < ApplicationController
       end
 
       if (!@invitee)
-        redirect_to action: 'index', not_found: true, rsvp_code: @rsvp_code
-      end 
-      if (@invitee.response == true)
+        redirect_to action: 'index', not_found: true, rsvp_code: @rsvp_code 
+      elsif (@invitee.response == true)
         redirect_to action: 'index', responded: true, rsvp_code: @rsvp_code
       end
     else
@@ -46,7 +45,7 @@ class RsvpController < ApplicationController
       # Set up our guests
       guests = params['guest']
     	
-      guests.each.with_index(0) do |g, i|
+      guests.each.with_index(1) do |g, i|
     		first_name = g[i]['first_name']
     		last_name = g[i]['last_name']
     		menu_item = g[i]['menu_item'].to_i

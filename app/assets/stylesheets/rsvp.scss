@@ -16,7 +16,7 @@ input.rsvp_char {
 .guests {
 	@include flexbox;
 	margin-left: -20px;
-	align-items: center;
+	align-items: top;
 	justify-content: center;
 	width: 100%;
 

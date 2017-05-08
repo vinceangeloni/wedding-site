@@ -28,11 +28,14 @@
 				<div class="form-group last">
 					<label>Dietary/Allergies</label>
 					<div class="checkbox nomargin">
-						<label class="check"><input type="checkbox" name="guest[<%= i %>]dietary" class="guest-dietary" data-guest="1"> This guest has a dietary restriction and/or allergies</label>
+						<label class="check">
+							<input type="checkbox" name="guest[<%= i %>]dietary" class="guest-dietary" data-guest="1"> This guest has a dietary restriction and/or allergies
+							<div class="mt10 dietary_text hidden">
+								<textarea class="form-control" rows="3" name="guest[<%= i %>]dietary_text" placeholder="Enter any allergies or dietary preferences you may have..."></textarea>
+							</div>
+						</label>
+
 					</div>
-				</div>
-				<div class="mt10 dietary_text hidden">
-					<textarea class="form-control" rows="3" name="guest[<%= i %>]dietary_text" placeholder="Enter any allergies or dietary preferences you may have..."></textarea>
 				</div>
 			</div>
 		</div>
