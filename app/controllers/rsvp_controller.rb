@@ -45,7 +45,7 @@ class RsvpController < ApplicationController
       # Set up our guests
       guests = params['guest']
     	
-      guests.each.with_index(1) do |g, i|
+      guests.each.with_index do |g, i|
     		first_name = g[i]['first_name']
     		last_name = g[i]['last_name']
     		menu_item = g[i]['menu_item'].to_i
