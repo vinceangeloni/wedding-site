@@ -63,10 +63,10 @@ class RsvpController < ApplicationController
     end
 
     # Lastly, update their RSVP response to true
-    #@invitee.update_attribute(:response, true)
+    @invitee.update_attribute(:response, true)
 
     # Let's redirect to the registry URL. You know, to make some last purchases.
-    #redirect_to registry_path(:rsvp =>1)
+    redirect_to registry_path(:rsvp =>1)
 
 
   end
