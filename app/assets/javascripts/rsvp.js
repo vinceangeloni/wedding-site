@@ -36,7 +36,6 @@ $(document).ready(function() {
 		var guest_num = $(this).val();
 		$('.btn-guestsnum').removeClass('active');
 		$(this).addClass('active');
-		
 	});
 
 	$("#guest-select button").click(function() {

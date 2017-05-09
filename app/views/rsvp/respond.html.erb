@@ -8,7 +8,7 @@
 		<% end %>
 			<%= hidden_field_tag(:rsvp_code, @rsvp_code, :required => true) %>
 			<%= hidden_field_tag(:attending, @attending, :required => true) %>
-			<%= hidden_field_tag(:guest_count, 1, :required => true) %>
+			<%= hidden_field_tag(:guest_count, @guestCount, :required => true) %>
 			<% if @step == "2" %>
 			<%= hidden_field_tag(:step, 3, :required => true) %>
 			<% end %>
