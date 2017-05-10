@@ -1,4 +1,5 @@
 Authenticate.configure do |config|
+  config.routes = false 
   # config.user_model = 'User'
 
   # config.cookie_name = 'authenticate_session_token'
@@ -16,7 +17,7 @@ Authenticate.configure do |config|
   # config.bad_login_lockout_period = 10.minutes
   # config.authentication_strategy = :email
   # config.redirect_url = '/'
-  # config.allow_sign_up = true
+  config.allow_sign_up = true
   # config.routes = true
   # config.reset_password_within = 2.days
   # config.modules = []

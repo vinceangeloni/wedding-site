@@ -1,0 +1,23 @@
+<div id="authenticate" class="password-reset">
+  <h2><%= t(".title") %></h2>
+
+  <p><%= t(".description") %></p>
+
+  <%= form_for :password, url: passwords_path do |form| %>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, type: 'email' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
+  <div class="links">
+    <%= link_to t(".sign_in"), sign_in_path %>
+  </div>
+
+</div>
