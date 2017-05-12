@@ -59,7 +59,7 @@ class RsvpController < ApplicationController
 
     # Send an email to us with the deets
     if (!@invitee.response)
-
+      RsvpMailer.rsvp_email(rsvp_code).deliver_now
     end
 
     # Lastly, update their RSVP response to true

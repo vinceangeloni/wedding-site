@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi, your trusty RSVP bot here just letting you know that <%= @invitee.name %> just RSVP'd</p>
+    <strong>
+      RSVP Details:
+    </strong>
+    <p><strong>Attending:</strong> <%= @invitee.attending ? "Yes" : "No" %> </p>
+    <% if @invitee.attending %>
+    <p><strong>Guest Count:</strong> <%= @guests_count %></p>
+    <p><a href="http://www.laurenandvince.ca/admin">View on Admin Panel</a></p>
+    <% end %>
+  </body>
+</html>
