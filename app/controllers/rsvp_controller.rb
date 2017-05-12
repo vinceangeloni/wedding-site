@@ -58,9 +58,7 @@ class RsvpController < ApplicationController
     end
 
     # Send an email to us with the deets
-    if (!@invitee.response)
-      RsvpMailer.rsvp_email(rsvp_code).deliver_now
-    end
+    RsvpMailer.rsvp_email(rsvp_code).deliver_now
 
     # Lastly, update their RSVP response to true
     @invitee.update_attribute(:response, true)
