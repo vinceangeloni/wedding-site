@@ -81,8 +81,8 @@ Rails.application.configure do
     address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'laurenandvince.ca',
-    user_name:            'apikey',
-    password:             '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',
+    user_name:            ENV["send_grid_user"],
+    password:             ENV["send_grid_pass"],
     authentication:       'plain',
     enable_starttls_auto: true  }
 end
