@@ -29,6 +29,7 @@ $(document).ready(function() {
 			$('#step2-submit').val('Send RSVP');
 			$('#guest-select').addClass('hidden');
 			$('#respondForm').attr('action', '/rsvp/send_rsvp');
+			$('#guest_count').val(0);
 		}
 		$('#step2-submit').removeClass('disabled');
 	});
