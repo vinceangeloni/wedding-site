@@ -11,6 +11,7 @@
     <p><strong>Attending:</strong> <%= @invitee.attending ? "Yes" : "No" %> </p>
     <% if @invitee.attending %>
     <p><strong>Guest Count:</strong> <%= @guests_count %></p>
+    <p><strong>Email:</strong> <%= @invitee.email %></p>
     <p><a href="http://www.laurenandvince.ca/admin">View on Admin Panel</a></p>
     <% end %>
   </body>

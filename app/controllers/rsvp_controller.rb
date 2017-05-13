@@ -16,11 +16,15 @@ class RsvpController < ApplicationController
       @meals = Meal.all
       @step = params['step']
       @attending = params['attending']
+      @email = params['email']
       @guestCount = params['guest_count']
       @guestCountInt = @guestCount.to_i
       @rsvp_code = params['rsvp_code'].downcase
       @invitee = Invite.find_by(rsvp_code: params['rsvp_code'].downcase)
 
+      if @guestCount == nil
+        @guestCount = 0
+      end
 
       if @step == "2"
         @actionName = "respond"
@@ -40,7 +44,7 @@ class RsvpController < ApplicationController
 
   def send_rsvp
   	@invitee = Invite.find_by(rsvp_code: params['rsvp_code'].downcase)
-    @invitee.update_attribute(:attending, params['attending'])
+    @invitee.update_attributes(:attending => params['attending'], :email => params['email'])
     rsvp_code = params['rsvp_code'].downcase
 
     # Check if they are even attending

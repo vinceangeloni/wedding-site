@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post 'rsvp/respond' => 'rsvp#respond'
   get 'rsvp/respond' => 'rsvp#index'
   post 'rsvp/send_rsvp' => 'rsvp#send_rsvp'
+  get 'rsvp/send_rsvp' => 'rsvp#index'
 
   get 'registry' => 'interface#registry'
 

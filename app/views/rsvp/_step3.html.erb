@@ -1,4 +1,5 @@
 <h3 class="leadline"><span>RSVP Step 3: Guest Information</span></h3>
+<p class="large text-center">Fill in the information below for each guest in your party.</p>
 <div class="row">
 	<div class="guests mt20">
 		<% @guestCountInt.times do |i| %>
@@ -6,11 +7,11 @@
 			<div class="well nomargin no-background">
 				<div class="form-group">
 					<label>First name*</label>
-					<input type="text" name="guests[<%= i %>][first_name]" class="form-control" minlength="2" required>
+					<input type="text" name="guests[<%= i %>][first_name]" class="form-control full-width" minlength="2" required>
 				</div>
 				<div class="form-group">
 					<label>Last name*</label>
-					<input type="text" name="guests[<%= i %>][last_name]" class="form-control" minlength="2" required>
+					<input type="text" name="guests[<%= i %>][last_name]" class="form-control full-width" minlength="2" required>
 				</div>
 				<div class="form-group">
 					<label>Entree Preference*</label>
@@ -29,12 +30,11 @@
 					<label>Dietary/Allergies</label>
 					<div class="checkbox nomargin">
 						<label class="check">
-							<input type="checkbox" name="guests[<%= i %>][dietary]" class="guest-dietary" data-guest="1"> This guest has a dietary restriction and/or allergies
-							<div class="mt10 dietary_text hidden">
-								<textarea class="form-control" rows="3" name="guests[<%= i %>][dietary_text]" placeholder="Enter any allergies or dietary preferences you may have..."></textarea>
-							</div>
+							<input type="checkbox" name="guests[<%= i %>][dietary]" class="guest-dietary" data-guest="<%= i %>"> This guest has a dietary restriction and/or allergies
 						</label>
-
+						<div class="mt10 dietary_text hidden">
+							<textarea class="form-control full-width" rows="3" name="guests[<%= i %>][dietary_text]" placeholder="Enter any allergies or dietary preferences you may have..."></textarea>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -49,3 +49,4 @@
 		</div>
 	</div>
 </div>
+<%= hidden_field_tag(:email, @email) %>

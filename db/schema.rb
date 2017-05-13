@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212214951) do
+ActiveRecord::Schema.define(version: 20170513155646) do
 
   create_table "guests", force: :cascade do |t|
     t.string   "first_name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170212214951) do
     t.datetime "updated_at",                 null: false
     t.boolean  "response",   default: false
     t.boolean  "attending",  default: false, null: false
+    t.string   "email"
   end
 
   create_table "meals", force: :cascade do |t|

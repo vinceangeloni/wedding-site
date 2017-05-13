@@ -352,7 +352,7 @@ label {
 //----------------------------------------------------------------------
 // Inputs
 //----------------------------------------------------------------------
-input[type="text"], textarea {
+input[type="text"],input[type="email"], textarea {
   display: block;
   background: #fff;
   padding: 6px;
@@ -360,7 +360,6 @@ input[type="text"], textarea {
   border: $border 1px solid;
   -webkit-display: none;
   font-size: 14px;
-  width: 100%;
   @include border-box;
   resize:  none;
 
@@ -380,6 +379,9 @@ input[type="text"], textarea {
   }
   &.error {
     border-color: $error;
+  }
+  &.length-medium {
+    width: 300px;
   }
 }
 

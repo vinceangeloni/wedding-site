@@ -1,7 +1,7 @@
 var attending = false;
 var guest_num = 1;
 var rsvp_code = "";
-
+var guest_id;
 
 $(document).ready(function() {
 	$("#guest-form").validate();
@@ -25,12 +25,14 @@ $(document).ready(function() {
 			$('#step2-submit').val('Next');
 			$('#guest-select').removeClass('hidden');
 			$('#respondForm').attr('action', '/rsvp/respond');
+			$('#guest_count').val(guest_num);
 		} else {
 			$('#step2-submit').val('Send RSVP');
 			$('#guest-select').addClass('hidden');
 			$('#respondForm').attr('action', '/rsvp/send_rsvp');
 			$('#guest_count').val(0);
 		}
+		$('#guest-email').removeClass('hidden');
 		$('#step2-submit').removeClass('disabled');
 	});
 	$('.btn-guestsnum').click(function() {
@@ -48,9 +50,10 @@ $(document).ready(function() {
 	// Toggles the dietary textarea for this guest
 	$('.guest-dietary').change(function() {
 		if ($(this).is(':checked')) {
-			$(this).parent().find(".dietary_text").removeClass('hidden');
+			guest_id = $(this).attr('data-guest');
+			$('.guest#' + guest_id + ' .dietary_text').removeClass('hidden');
 		} else {
-			$(this).parent().find(".dietary_text").addClass('hidden');
+			$('.guest#' + guest_id + ' .dietary_text').addClass('hidden');
 		}
 	});
 })
