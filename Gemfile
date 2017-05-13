@@ -24,6 +24,7 @@ gem 'rails_admin'
 gem 'evil_icons'
 gem 'figaro'
 gem 'gemoji'
+gem 'exception_handler'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
