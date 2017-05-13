@@ -9,4 +9,12 @@ class RsvpMailer < ApplicationMailer
  		end
     	mail(to: "vince_a@me.com", subject: 'New RSVP')
   	end
+  	def guest_rsvp_confirm(rsvp_code)
+  		@invitee = Invite.find_by(rsvp_code: rsvp_code)
+  		if (@invitee.attending)
+    		@guests = Guest.where(:rsvp_code => rsvp_code)
+ 		end
+
+    	mail(to: @invitee.email, subject: 'Vince and Lauren\'s Wedding RSVP!')
+  	end
 end

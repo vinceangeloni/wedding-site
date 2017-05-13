@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hey <%= @invitee.name %> thanks for the RSVP. We want to confirm that you <%= @invitee.attending ? "are" : "aren't" %> attending the wedding. </p>
+    <strong>
+      RSVP Details:
+    </strong>
+    <p><strong>Attending:</strong> <%= @invitee.attending ? "Yes" : "No" %>
+    <% if @invitee.attending %>
+    <p><strong>Guests</strong><br>----------------------</p>
+    <% @guests.each_with_index do |guest,i| %>
+    <p><strong>Name: </strong><%= guest.first_name %> <%= guest.last_name %><br><strong>Meal: </strong><%= Meal.find(guest.menu_item).item %><br><strong>Dietary Restrictions: </strong> <%= guest.dietary ? "Yes" : "No" %><br><%= guest.dietary_text %><br>----
+    </p>
+    <% end %>
+    <% end %>
+    <p>If you have any changes, please don't hesitate to <a href="mailto:futuremrsangeloni@outlook.com">email us</a><br/>- Lauren and Vince</p>
+  </body>
+</html>

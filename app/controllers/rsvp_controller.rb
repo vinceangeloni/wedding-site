@@ -64,6 +64,10 @@ class RsvpController < ApplicationController
     # Send an email to us with the deets
     RsvpMailer.rsvp_email(rsvp_code).deliver_now
 
+    # If they supplied an email, send them an RSVP receipt
+    if !@invitee.email.blank?
+      RsvpMailer.guest_rsvp_confirm(rsvp_code).deliver_now
+    end
     # Lastly, update their RSVP response to true
     @invitee.update_attribute(:response, true)
 
