@@ -24,7 +24,11 @@ module Site
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += %w(.png)
     config.exception_handler = {
-        dev: true
+        dev: true,
+        layouts: {
+            404 => "exception",
+            500 => "exception"
+        }
     }
   end
 end
