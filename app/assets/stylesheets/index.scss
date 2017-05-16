@@ -75,6 +75,9 @@ body#index .page_wrapper {
 			&:hover {
 				box-shadow: none;
 			}
+			&.home {
+				font-size: 22px;
+			}
 		}
 	}
 }

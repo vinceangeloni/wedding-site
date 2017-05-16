@@ -25,9 +25,9 @@ $(document).ready(function() {
 		toggleNav();
 	});	
      $('.tip').tipr({
-          'speed': 200,
+          'speed': 0,
           'mode': 'above',
-          'space': 70
+          'space': 100
      });
 
 });
