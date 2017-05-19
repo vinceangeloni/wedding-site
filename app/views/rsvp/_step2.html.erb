@@ -1,7 +1,7 @@
 
 	<h3 class="leadline"><span>RSVP Step 2: Response</span></h3>
 	<div class="row">
-		<div class="col-lg-12 text-center">
+		<div class="col-sm-12 text-center">
 			<h3 class="text-center">Hi <%= @invitee.name %>! <%= emojify(":wave:") %></h3>
 			<p class="large mb40 text-center">Thanks for responding to our invite. Will you be joining us for our special day?</p> 
 			<div class="well no-background">
@@ -12,7 +12,7 @@
 					<button type="button" class="button full-width large btn-attending" value="false">Sorry, Can't Make It</button>
 				</div>
 			</div>
-			<div class="col-lg-12 text-center hidden" id="guest-select">
+			<div class="col-sm-12 text-center hidden" id="guest-select">
 				<p class="large">How many guests are in your party?</p>
 				<div class="button-group" id="guest-select">
 					<button type="button" class="button large selected" value="1">1</button>
@@ -22,7 +22,7 @@
 					<button type="button" class="button large" value="5">5</button>
 				</div>
 			</div>
-			<div class="col-lg-12 mt40 text-center hidden" id="guest-email">
+			<div class="col-sm-12 mt40 text-center hidden" id="guest-email">
 				<p class="large">Have an email address? Receive news about the wedding!</p>
 				<%= email_field_tag 'email', nil, class: "large center length-medium", placeholder: "email@example.com" %>
 			</div>

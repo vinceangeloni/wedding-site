@@ -19,12 +19,14 @@ input.rsvp_char {
 	align-items: top;
 	justify-content: center;
 	width: 100%;
+	@include flex-wrap(wrap);
 
 	.guest {
 		@include flex(1, 1, auto);
 		margin-left: 20px;
 		min-width: 250px;
 		max-width: 450px;
+		margin-bottom: 20px;
 
 		.well {
 			display: block;
