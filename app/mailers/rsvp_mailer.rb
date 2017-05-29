@@ -7,7 +7,7 @@ class RsvpMailer < ApplicationMailer
     	if (@invitee.attending)
     		@guests_count = Guest.where(:rsvp_code => rsvp_code).count
  		end
-    	mail(to: "vince_a@me.com", subject: 'New RSVP')
+    	mail(to: "vince_a@me.com,laurenfinnie@hotmail.com", subject: 'New RSVP')
   	end
   	def guest_rsvp_confirm(rsvp_code)
   		@invitee = Invite.find_by(rsvp_code: rsvp_code)
