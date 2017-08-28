@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'event' => 'interface#event'
 
-  get 'rsvp' => 'rsvp#index'
+  get 'rsvp' => 'index#index'
   post 'rsvp/respond' => 'rsvp#respond'
   get 'rsvp/respond' => 'rsvp#index'
   post 'rsvp/send_rsvp' => 'rsvp#send_rsvp'
